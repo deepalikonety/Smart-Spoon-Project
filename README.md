@@ -15,91 +15,42 @@ This project uses **Natural Language Processing (NLP)** and **Machine Learning**
 - **Data Preprocessing**: Includes steps for cleaning and preparing text data for machine learning models.
 
 
-###Running the Project:
-Load the dataset and preprocess the text data.
+## Project 2: Food Recognition with Dietary Advice
 
-Train a model using machine learning techniques like Logistic Regression or SVM.
+This project uses **Deep Learning (CNNs)** to recognize food items from images and provide **personalized dietary recommendations** based on the recognized food. The app is designed to help users make healthier food choices by analyzing food images.
 
-Predict sentiment and behavior of new input data.
+### Features:
+- **Food Image Recognition**: Classifies food images into 5 predefined categories: Biryani, Butter Chicken, Gulab Jamun, Palak Paneer, and Poha.
+- **Dietary Advice**: Provides specific dietary advice related to each food item, such as recommendations on sodium intake and salt usage.
+- **Salt Simulation**: Includes a button to simulate salt feedback based on the food’s nutritional profile.
+- **User-Friendly Interface**: Built with **Streamlit** for easy food image uploads and predictions.
+- **Model**: Uses a **MobileNetV2** pre-trained model fine-tuned on a custom food image dataset.
 
-Project 2: Food Recognition with Dietary Advice
-This application leverages deep learning (CNNs) to identify food items from uploaded images and provide personalized dietary recommendations based on the food type.
+### Technologies Used:
+- **TensorFlow / Keras**: For training the food recognition model.
+- **Streamlit**: To create an interactive front-end for uploading images and viewing predictions.
+- **ngrok**: To expose the Streamlit app over the internet.
+- **Python**: Primary language for data processing, model training, and app development.
 
-Features:
-Food Image Recognition: Classifies food images into categories such as "Biryani", "Butter Chicken", etc.
+### Running the Project:
+1. Ensure that the **food_classifier.h5** model file is available in the project directory.
+2.  Start the Streamlit app by running:
+    ```bash
+    !streamlit run app.py &>/content/logs.txt & 
+    ```
+3. After running the above command, **Streamlit** will start the app locally.
+4. **ngrok** is used to expose the Streamlit app to the internet, allowing you to access it from anywhere:
+    - **ngrok** should automatically open a tunnel, but if not, you can manually start it with:
+      ```python
+      from pyngrok import ngrok
+      public_url = ngrok.connect(8501)
+      print(f"App is accessible at: {public_url}")
+      ```
+    - **ngrok** will generate a public URL that you can use to access your app. This URL can be shared with anyone to view the app remotely.
 
-Dietary Advice: Provides nutritional advice based on the recognized food item.
+### Sample Usage:
+1. **Upload a food image** through the interface.
+2. The app will predict the food type and provide **personalized dietary advice**.
+3. **Optionally**, you can trigger the **"simulate salt"** feature to simulate salt feedback based on the food's profile.
 
-Salt Simulation: A "simulate salt" button is available for providing a sensory feedback option for users based on dietary advice.
 
-Technologies Used:
-TensorFlow/Keras: For training the food recognition model.
-
-Streamlit: To build a user-friendly interface for food image uploading and prediction.
-
-Pyngrok: For exposing the app via a public URL.
-
-Model Overview:
-The model was trained on a dataset of food images and can classify five food types:
-
-Biryani
-
-Butter Chicken
-
-Gulab Jamun
-
-Palak Paneer
-
-Poha
-
-The model uses MobileNetV2 architecture and is optimized for mobile devices.
-
-Installation:
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Running the Project:
-Ensure that the food_classifier.h5 model is saved in your directory.
-
-Run the Streamlit app using the following command:
-
-bash
-Copy
-Edit
-streamlit run app.py
-Once the app is running, it will provide a public URL through ngrok where users can upload food images, and the app will return the predicted food label and dietary advice.
-
-Example Code:
-python
-Copy
-Edit
-import numpy as np
-from PIL import Image
-from tensorflow.keras.models import load_model
-
-# Load model
-model = load_model("food_classifier.h5")
-
-# Define labels
-class_labels = ["biryani", "butter_chicken", "gulab_jamun", "palak_paneer", "poha"]
-
-# Prediction function
-def predict(img):
-    img = img.resize((150, 150))
-    img_array = np.array(img) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)
-    prediction = model.predict(img_array)
-    class_idx = np.argmax(prediction)
-    return class_labels[class_idx]
-Streamlit App Customization:
-The app UI is styled with custom CSS to create a clean and visually appealing interface. The "simulate salt" button is triggered when the app detects the need for salt simulation in the dietary recommendation.
-
-Public URL:
-Once the Streamlit app is running, the following command will provide a public URL:
-
-python
-Copy
-Edit
-public_url = ngrok.connect(8501)
-print(public_url)
