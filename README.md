@@ -51,6 +51,13 @@ This project uses **Deep Learning (CNNs)** to recognize food items from images a
 ### Sample Usage:
 1. **Upload a food image** through the interface.
 2. The app will predict the food type and provide **personalized dietary advice**.
-3. **Optionally**, you can trigger the **"simulate salt"** feature to simulate salt feedback based on the food's profile.
+
+   
+![image](https://github.com/user-attachments/assets/bbb87840-ea29-4671-bea8-ebf9a31c0fe8)
+![example image](https://github.com/user-attachments/assets/002023b4-4d0b-44f9-843d-6ebf793505d4)
+![image](https://github.com/user-attachments/assets/598a03e6-83d3-4b88-98ef-2eb0acdd6b86)
+![image](https://github.com/user-attachments/assets/5f9b077b-32b4-46fc-8faf-53aaf8327e09)
+
+
 
 
