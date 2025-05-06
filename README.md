@@ -22,7 +22,6 @@ This project uses **Deep Learning (CNNs)** to recognize food items from images a
 ### Features:
 - **Food Image Recognition**: Classifies food images into 5 predefined categories: Biryani, Butter Chicken, Gulab Jamun, Palak Paneer, and Poha.
 - **Dietary Advice**: Provides specific dietary advice related to each food item, such as recommendations on sodium intake and salt usage.
-- **Salt Simulation**: Includes a button to simulate salt feedback based on the food’s nutritional profile.
 - **User-Friendly Interface**: Built with **Streamlit** for easy food image uploads and predictions.
 - **Model**: Uses a **MobileNetV2** pre-trained model fine-tuned on a custom food image dataset.
 
@@ -52,11 +51,16 @@ This project uses **Deep Learning (CNNs)** to recognize food items from images a
 1. **Upload a food image** through the interface.
 2. The app will predict the food type and provide **personalized dietary advice**.
 
-   
+### Example Images for Food Prediction with Dietary Advice
 ![image](https://github.com/user-attachments/assets/bbb87840-ea29-4671-bea8-ebf9a31c0fe8)
 ![example image](https://github.com/user-attachments/assets/002023b4-4d0b-44f9-843d-6ebf793505d4)
 ![image](https://github.com/user-attachments/assets/598a03e6-83d3-4b88-98ef-2eb0acdd6b86)
 ![image](https://github.com/user-attachments/assets/5f9b077b-32b4-46fc-8faf-53aaf8327e09)
+
+### Sentimental Analysis results:
+![image](https://github.com/user-attachments/assets/bd240a2b-c23a-473a-83b1-194239ddafbf)
+![image](https://github.com/user-attachments/assets/dd42d612-5e67-4612-a32a-fd920df4ac4a)
+![image](https://github.com/user-attachments/assets/5e3db676-45ed-4cba-86dc-e750191d03db)
 
 
 
